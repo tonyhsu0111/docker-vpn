@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  a-pn:
+    image: hwdsl2/ipsec-vpn-server
+    hostname: a-pn
+    container_name: a-pn
+    privileged: true
+    env_file: ./vpn.env
+    volumes:
+      - /lib/modules:/lib/modules:ro
+    ports:
+      - 500:500/udp
+      - 4500:4500/udp
